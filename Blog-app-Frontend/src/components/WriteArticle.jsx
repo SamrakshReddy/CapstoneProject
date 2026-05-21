@@ -72,7 +72,7 @@ function WriteArticle() {
     } catch (err) {
 
       toast.error(
-        err.response?.data?.error || "Failed to publish article"
+        err.response?.data?.message || err.response?.data?.error || "Failed to publish article"
       );
 
     } finally {

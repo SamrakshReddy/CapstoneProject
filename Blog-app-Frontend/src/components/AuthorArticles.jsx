@@ -34,7 +34,7 @@ function AuthorArticles() {
         setArticles(res.data.payload);
       } catch (err) {
         console.log(err);
-        setError(err.response?.data?.error || "Failed to fetch articles");
+        setError(err.response?.data?.message || err.response?.data?.error || "Failed to fetch articles");
       } finally {
         setLoading(false);
       }
