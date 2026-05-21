@@ -15,10 +15,12 @@ const userCred = req.body;
 // Authenticate user and get token
 const { token, user } = await authenticate(userCred);
 
+const isProduction = process.env.NODE_ENV === "production" || process.env.PORT !== undefined;
+
 res.cookie("token", token, {
   httpOnly: true,
-  sameSite: "lax",
-  secure: false,
+  sameSite: isProduction ? "none" : "lax",
+  secure: isProduction ? true : false,
 });
 // Send response with user details
 res.status(200).json({
@@ -48,11 +50,12 @@ payload: req.user
 
 //  LOGOUT 
 commonRouter.get("/logout", (req, res) => {
-// Clear the token cookie
+const isProduction = process.env.NODE_ENV === "production" || process.env.PORT !== undefined;
+
 res.clearCookie("token", {
-httpOnly: true, // Must match original  settings
-secure: false,  // Must match original settings
-sameSite: "lax",// Must match original settings
+  httpOnly: true,
+  secure: isProduction ? true : false,
+  sameSite: isProduction ? "none" : "lax",
 });
 
 res.status(200).json({

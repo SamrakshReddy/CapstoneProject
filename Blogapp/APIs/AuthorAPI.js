@@ -56,10 +56,12 @@ authorRoute.post("/login", async (req, res) => {
 
     const result = await authenticate(req.body);
 
+    const isProduction = process.env.NODE_ENV === "production" || process.env.PORT !== undefined;
+
     res.cookie("token", result.token, {
       httpOnly: true,
-      sameSite: "lax",
-      secure: false
+      sameSite: isProduction ? "none" : "lax",
+      secure: isProduction ? true : false
     });
 
     res.status(200).json({
