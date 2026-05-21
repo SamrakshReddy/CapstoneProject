@@ -30,11 +30,13 @@ function AuthorProfile() {
   const profilePicSrc = (() => {
     if (!profilePicValue || typeof profilePicValue !== "string") return "";
     if (/^https?:\/\//i.test(profilePicValue)) return profilePicValue;
+    
+    const apiBase = import.meta.env.VITE_API_URL || 'http://localhost:4000';
     if (profilePicValue.startsWith("/")) {
-      return `http://localhost:4000${profilePicValue}`;
+      return `${apiBase}${profilePicValue}`;
     }
 
-    return `http://localhost:4000/${profilePicValue}`;
+    return `${apiBase}/${profilePicValue}`;
   })();
 
   const initials = fullName
