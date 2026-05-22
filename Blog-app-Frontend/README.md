@@ -1,16 +1,101 @@
-# React + Vite
+Frontend
+Frontend for Blog App using React.js, Vite, and Tailwind CSS.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features are
+User Registration
+User Login Authentication
+Forgot Password
+Reset Password
+Create Articles
+Edit Articles
+Delete Articles
+View All Articles
+Author Dashboard
+Author Profile
+Protected Routes
+JWT Authentication
+Responsive UI
+API Integration
+State Management using Zustand
+Error Handling
+Dynamic Routing
+Packages Used
+Create React App using Vite: npm create vite@latest
 
-Currently, two official plugins are available:
+Install Dependencies: npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Install React: npm install react react-dom
 
-## React Compiler
+Install React Router: npm install react-router-dom
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Install Axios: npm install axios
 
-## Expanding the ESLint configuration
+Install Tailwind CSS: npm install tailwindcss @tailwindcss/vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Install Zustand: npm install zustand
+
+Install JWT Decode: npm install jwt-decode
+
+Frontend Folder Structure
+public
+
+src
+
+assets
+
+react.svg
+components
+
+ArticleById.jsx
+ArticlesFeed.jsx
+AuthorArticles.jsx
+AuthorProfile.jsx
+ConfirmationModal.jsx
+EditArticleForm.jsx
+ErrorBoundry.jsx
+Footer.jsx
+ForgotPassword.jsx
+Header.jsx
+Home.jsx
+Login.jsx
+Logo.jsx
+ProtectedRoute.jsx
+Register.jsx
+ResetPassword.jsx
+RootLayout.jsx
+SubscriptionModal.jsx
+Unauthorize.jsx
+UserProfile.jsx
+WriteArticle.jsx
+store
+
+authStore.js
+themeStore.js
+styles
+
+common.js
+App.jsx
+
+index.css
+
+main.jsx
+
+node_modules
+
+.gitignore
+
+package.json
+
+package-lock.json
+
+vite.config.js
+
+index.html
+
+README.md
+
+To Run Project
+npm install npm run dev
+
+Environment Variables
+env VITE_BACKEND_URL=http://localhost:4000
